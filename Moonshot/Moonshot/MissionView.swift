@@ -73,7 +73,7 @@ struct MissionView: View {
                       .font(.headline)
 
                     Text(crewMember.role)
-                      .foregroundStyle(.secondary)
+                      .foregroundStyle(.white.opacity(0.5))
                   }
                 }
                 .padding(.horizontal)
