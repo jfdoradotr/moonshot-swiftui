@@ -33,7 +33,6 @@ struct MissionView: View {
           .containerRelativeFrame(.horizontal) { width, axis in
             width * 0.6
           }
-
         VStack(alignment: .leading) {
           Rectangle()
             .frame(height: 2)
@@ -47,7 +46,9 @@ struct MissionView: View {
             .frame(height: 2)
             .foregroundStyle(.lightBackground)
             .padding(.vertical)
-
+          Text("Crew")
+            .font(.title.bold())
+            .padding(.bottom, 5)
         }
         .padding(.horizontal)
 
