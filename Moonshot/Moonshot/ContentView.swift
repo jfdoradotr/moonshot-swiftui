@@ -20,10 +20,19 @@ struct ContentView: View {
             NavigationLink {
               Text("Detail view")
             } label: {
-              Image(mission.image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
+              VStack {
+                Image(mission.image)
+                  .resizable()
+                  .scaledToFit()
+                  .frame(width: 100, height: 100)
+                VStack {
+                  Text(mission.displayName)
+                    .font(.headline)
+                  Text(mission.launchDate ?? "N/A")
+                    .font(.caption)
+                }
+                .frame(maxWidth: .infinity)
+              }
             }
           }
         }
