@@ -46,6 +46,7 @@ struct ContentView: View {
         .padding([.horizontal, .bottom])
       }
       .navigationTitle("Moonshot")
+      .background(.darkBackground)
     }
   }
 }
