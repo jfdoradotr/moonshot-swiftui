@@ -5,12 +5,10 @@
 import SwiftUI
 
 struct ContentView: View {
-  let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
-  let missions: [Mission] = Bundle.main.decode("missions.json")
-
   @State private var isShowingGrid = true
 
-
+  let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+  let missions: [Mission] = Bundle.main.decode("missions.json")
 
   private var gridLayout: some View {
     let columns = [GridItem(.adaptive(minimum: 150))]
