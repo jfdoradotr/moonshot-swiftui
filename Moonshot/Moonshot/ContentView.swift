@@ -26,9 +26,7 @@ struct ContentView: View {
 
   private var missionContentItems: some View {
     ForEach(missions) { mission in
-      NavigationLink {
-        MissionView(mission: mission, astronauts: astronauts)
-      } label: {
+      NavigationLink(value: mission) {
         VStack {
           Image(mission.image)
             .resizable()
@@ -82,6 +80,9 @@ struct ContentView: View {
             }
           }
         }
+      }
+      .navigationDestination(for: Mission.self) { mission in
+        MissionView(mission: mission, astronauts: astronauts)
       }
     }
   }
