@@ -51,6 +51,10 @@ struct ContentView: View {
             .stroke(.lightBackground)
         )
       }
+      .accessibilityElement()
+      .accessibilityLabel(mission.displayName)
+      .accessibilityHint(mission.launchDate == nil ? "No launch date available" : mission.formattedLaunchDate)
+      .accessibilityRemoveTraits(.isButton)
     }
   }
 
@@ -79,6 +83,8 @@ struct ContentView: View {
               isShowingGrid.toggle()
             }
           }
+          .accessibilityLabel(isShowingGrid ? "Grid view" : "List view")
+          .accessibilityHint(isShowingGrid ? "Switch to list view" : "Switch to grid view")
         }
       }
       .navigationDestination(for: Mission.self) { mission in

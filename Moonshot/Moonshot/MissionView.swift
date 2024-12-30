@@ -22,16 +22,21 @@ struct MissionView: View {
   var body: some View {
     ScrollView {
       VStack {
-        Image(mission.image)
-          .resizable()
-          .scaledToFit()
-          .containerRelativeFrame(.horizontal) { width, axis in
-            width * 0.6
-          }
-        Text(mission.longLaunchDate)
-          .font(.subheadline)
-          .foregroundStyle(.secondary)
-          .padding(.top, 5)
+        VStack {
+          Image(mission.image)
+            .resizable()
+            .scaledToFit()
+            .containerRelativeFrame(.horizontal) { width, axis in
+              width * 0.6
+            }
+          Text(mission.longLaunchDate)
+            .font(.subheadline)
+            .foregroundStyle(.secondary)
+            .padding(.top, 5)
+        }
+        .accessibilityElement()
+        .accessibilityLabel(mission.displayName)
+        .accessibilityHint(mission.launchDate == nil ? "No launch date available" : mission.formattedLaunchDate)
         VStack(alignment: .leading) {
           CustomDivider()
           Text("Mission Highlights")
